@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "dudjlk94",
+    "database": "jheller_tour_project",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "dudjlk94",
+    "database": "jheller_tour_project_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "dudjlk94",
+    "database": "jheller_tour_project_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
