@@ -12,7 +12,7 @@ module.exports = {
       
       event_id: {
         type: Sequelize.INTEGER,
-        allowNull: fales
+        allowNull: false
       },
       stage_id: {
         type: Sequelize.INTEGER,
