@@ -14,9 +14,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Set_time.init({
-    set_time_id: DataTypes.INTEGER,
-    event_id: DataTypes.INTEGER,
-    stage_id: DataTypes.INTEGER
+    set_time_id: {
+      type: DataTypes.INTEGER,
+    primaryKey: true,
+  autoIncrement: true
+},
+    event_id: {
+      type: DataTypes.INTEGER
+    },
+    stage_id: {
+      type: DataTypes.INTEGER
+    }
   }, {
     sequelize,
     modelName: 'Set_time',

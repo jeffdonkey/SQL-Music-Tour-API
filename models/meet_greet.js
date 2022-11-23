@@ -14,10 +14,20 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Meet_greet.init({
-    meet_greet_id: DataTypes.INTEGER,
-    event_id: DataTypes.INTEGER,
-    band_id: DataTypes.INTEGER,
-    length: DataTypes.INTEGER
+    meet_greet_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    event_id: {
+      type: DataTypes.INTEGER
+    },
+    band_id: {
+      type: DataTypes.INTEGER
+    },
+    length: {
+      type: DataTypes.INTEGER
+    },
   }, {
     sequelize,
     modelName: 'Meet_greet',

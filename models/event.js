@@ -14,10 +14,19 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Event.init({
-    event_id: DataTypes.INTEGER,
-    city: DataTypes.STRING,
-    state: DataTypes.STRING,
-    address: DataTypes.STRING
+    event_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    city: {
+      type: DataTypes.STRING
+    },
+    state: {
+      type: DataTypes.STRING
+    },
+    address: {
+      type: DataTypes.STRING}
   }, {
     sequelize,
     modelName: 'Event',
