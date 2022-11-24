@@ -9,18 +9,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      city: {
+      name: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      state: {
-        type: Sequelize.STRING,
+      date: {
+        type: Sequelize.DATE,
         allowNull: false
       },
-      address: {
-        type: Sequelize.STRING,
+      start_time: {
+        type: Sequelize.DATE,
         allowNull: false
       },
+      end_time: {
+        type: Sequelize.DATE,
+        allowNull: false
+      }
       
     });
   },

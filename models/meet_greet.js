@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     meet_greet_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+      allowNull: false
     },
     event_id: {
       type: DataTypes.INTEGER
@@ -28,7 +29,12 @@ module.exports = (sequelize, DataTypes) => {
     band_id: {
       type: DataTypes.INTEGER
     },
-    
+    meet_start_time: {
+      type: DataTypes.DATE
+    },
+    meet_end_time: {
+      type: DataTypes.DATE
+    }
   }, {
     sequelize,
     modelName: 'Meet_greet',

@@ -26,16 +26,25 @@ module.exports = (sequelize, DataTypes) => {
     event_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+      allowNull: false
     },
-    city: {
-      type: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    state: {
-      type: DataTypes.STRING
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false
     },
-    address: {
-      type: DataTypes.STRING}
+    start_time: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    end_time: {
+      type: DataTypes.DATE,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Event',

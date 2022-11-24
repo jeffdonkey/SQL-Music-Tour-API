@@ -10,13 +10,17 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       event_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+        type: Sequelize.INTEGER
       },
       band_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+        type: Sequelize.INTEGER
       },
+      meet_start_time: {
+        type: Sequelize.DATE
+      },
+      meet_end_time: {
+        type: Sequelize.DATE
+      }
       
     });
   },
