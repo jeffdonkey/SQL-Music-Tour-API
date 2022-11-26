@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Set_times', {
+    await queryInterface.createTable('set_times', {
       set_time_id: {
         allowNull: false,
         autoIncrement: true,
@@ -18,10 +18,18 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
+      start_time: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      band_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      }
       
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Set_times');
+    await queryInterface.dropTable('set_times');
   }
 };

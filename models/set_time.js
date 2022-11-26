@@ -31,6 +31,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     stage_id: {
       type: DataTypes.INTEGER
+    },
+    start_time: {
+      type: DataTypes.DATE
+    },
+    band_id: {
+      type: DataTypes.INTEGER
     }
   }, {
     sequelize,
