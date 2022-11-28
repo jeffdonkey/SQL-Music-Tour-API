@@ -1,27 +1,65 @@
 {
-    "name": "SequelizeDatabaseError",
-    "parent": {
-        "length": 115,
-        "name": "error",
-        "severity": "ERROR",
-        "code": "42703",
-        "position": "793",
-        "file": "parse_relation.c",
-        "line": "3661",
-        "routine": "errorMissingColumn",
-        "sql": "SELECT \"Band\".*, \"meet_greets\".\"meet_greet_id\" AS \"meet_greets.meet_greet_id\", \"meet_greets\".\"event_id\" AS \"meet_greets.event_id\", \"meet_greets\".\"band_id\" AS \"meet_greets.band_id\", \"meet_greets\".\"meet_start_time\" AS \"meet_greets.meet_start_time\", \"meet_greets\".\"meet_end_time\" AS \"meet_greets.meet_end_time\", \"set_times\".\"set_time_id\" AS \"set_times.set_time_id\", \"set_times\".\"event_id\" AS \"set_times.event_id\", \"set_times\".\"stage_id\" AS \"set_times.stage_id\", \"set_times\".\"start_time\" AS \"set_times.start_time\", \"set_times\".\"band_id\" AS \"set_times.band_id\" FROM (SELECT \"Band\".\"band_id\", \"Band\".\"name\", \"Band\".\"genre\", \"Band\".\"available_start_time\", \"Band\".\"end_time\" FROM \"bands\" AS \"Band\" WHERE \"Band\".\"name\" = 'GussetPunch' AND ( SELECT \"band_id\" FROM \"meet_greets\" AS \"meet_greets\" WHERE (\"meet_greets\".\"name\" LIKE '%Goobertown%' AND \"meet_greets\".\"band_id\" = \"Band\".\"band_id\") LIMIT 1 ) IS NOT NULL AND ( SELECT \"band_id\" FROM \"set_times\" AS \"set_times\" WHERE (\"set_times\".\"name\" LIKE '%Goobertown% ' AND \"set_times\".\"band_id\" = \"Band\".\"band_id\") LIMIT 1 ) IS NOT NULL LIMIT 1) AS \"Band\" INNER JOIN \"meet_greets\" AS \"meet_greets\" ON \"Band\".\"band_id\" = \"meet_greets\".\"band_id\" AND \"meet_greets\".\"name\" LIKE '%Goobertown%' INNER JOIN \"set_times\" AS \"set_times\" ON \"Band\".\"band_id\" = \"set_times\".\"band_id\" AND \"set_times\".\"name\" LIKE '%Goobertown% ';"
-    },
-    "original": {
-        "length": 115,
-        "name": "error",
-        "severity": "ERROR",
-        "code": "42703",
-        "position": "793",
-        "file": "parse_relation.c",
-        "line": "3661",
-        "routine": "errorMissingColumn",
-        "sql": "SELECT \"Band\".*, \"meet_greets\".\"meet_greet_id\" AS \"meet_greets.meet_greet_id\", \"meet_greets\".\"event_id\" AS \"meet_greets.event_id\", \"meet_greets\".\"band_id\" AS \"meet_greets.band_id\", \"meet_greets\".\"meet_start_time\" AS \"meet_greets.meet_start_time\", \"meet_greets\".\"meet_end_time\" AS \"meet_greets.meet_end_time\", \"set_times\".\"set_time_id\" AS \"set_times.set_time_id\", \"set_times\".\"event_id\" AS \"set_times.event_id\", \"set_times\".\"stage_id\" AS \"set_times.stage_id\", \"set_times\".\"start_time\" AS \"set_times.start_time\", \"set_times\".\"band_id\" AS \"set_times.band_id\" FROM (SELECT \"Band\".\"band_id\", \"Band\".\"name\", \"Band\".\"genre\", \"Band\".\"available_start_time\", \"Band\".\"end_time\" FROM \"bands\" AS \"Band\" WHERE \"Band\".\"name\" = 'GussetPunch' AND ( SELECT \"band_id\" FROM \"meet_greets\" AS \"meet_greets\" WHERE (\"meet_greets\".\"name\" LIKE '%Goobertown%' AND \"meet_greets\".\"band_id\" = \"Band\".\"band_id\") LIMIT 1 ) IS NOT NULL AND ( SELECT \"band_id\" FROM \"set_times\" AS \"set_times\" WHERE (\"set_times\".\"name\" LIKE '%Goobertown% ' AND \"set_times\".\"band_id\" = \"Band\".\"band_id\") LIMIT 1 ) IS NOT NULL LIMIT 1) AS \"Band\" INNER JOIN \"meet_greets\" AS \"meet_greets\" ON \"Band\".\"band_id\" = \"meet_greets\".\"band_id\" AND \"meet_greets\".\"name\" LIKE '%Goobertown%' INNER JOIN \"set_times\" AS \"set_times\" ON \"Band\".\"band_id\" = \"set_times\".\"band_id\" AND \"set_times\".\"name\" LIKE '%Goobertown% ';"
-    },
-    "sql": "SELECT \"Band\".*, \"meet_greets\".\"meet_greet_id\" AS \"meet_greets.meet_greet_id\", \"meet_greets\".\"event_id\" AS \"meet_greets.event_id\", \"meet_greets\".\"band_id\" AS \"meet_greets.band_id\", \"meet_greets\".\"meet_start_time\" AS \"meet_greets.meet_start_time\", \"meet_greets\".\"meet_end_time\" AS \"meet_greets.meet_end_time\", \"set_times\".\"set_time_id\" AS \"set_times.set_time_id\", \"set_times\".\"event_id\" AS \"set_times.event_id\", \"set_times\".\"stage_id\" AS \"set_times.stage_id\", \"set_times\".\"start_time\" AS \"set_times.start_time\", \"set_times\".\"band_id\" AS \"set_times.band_id\" FROM (SELECT \"Band\".\"band_id\", \"Band\".\"name\", \"Band\".\"genre\", \"Band\".\"available_start_time\", \"Band\".\"end_time\" FROM \"bands\" AS \"Band\" WHERE \"Band\".\"name\" = 'GussetPunch' AND ( SELECT \"band_id\" FROM \"meet_greets\" AS \"meet_greets\" WHERE (\"meet_greets\".\"name\" LIKE '%Goobertown%' AND \"meet_greets\".\"band_id\" = \"Band\".\"band_id\") LIMIT 1 ) IS NOT NULL AND ( SELECT \"band_id\" FROM \"set_times\" AS \"set_times\" WHERE (\"set_times\".\"name\" LIKE '%Goobertown% ' AND \"set_times\".\"band_id\" = \"Band\".\"band_id\") LIMIT 1 ) IS NOT NULL LIMIT 1) AS \"Band\" INNER JOIN \"meet_greets\" AS \"meet_greets\" ON \"Band\".\"band_id\" = \"meet_greets\".\"band_id\" AND \"meet_greets\".\"name\" LIKE '%Goobertown%' INNER JOIN \"set_times\" AS \"set_times\" ON \"Band\".\"band_id\" = \"set_times\".\"band_id\" AND \"set_times\".\"name\" LIKE '%Goobertown% ';",
-    "parameters": {}
+    "event_id": 1,
+    "name": "Goobertown",
+    "date": "2023-10-01",
+    "start_time": "01:00:00",
+    "end_time": "11:00:00",
+    "meet_greets": [
+        {
+            "meet_greet_id": 1,
+            "event_id": 1,
+            "band_id": 1,
+            "meet_start_time": "01:00:00",
+            "meet_end_time": "02:00:00",
+            "band": {
+                "band_id": 1,
+                "name": "GussetPunch",
+                "genre": "buttRock",
+                "available_start_time": "02:00:00",
+                "end_time": "11:00:00"
+            }
+        },
+        {
+            "meet_greet_id": 4,
+            "event_id": 1,
+            "band_id": 1,
+            "meet_start_time": "03:00:00",
+            "meet_end_time": "04:00:00",
+            "band": {
+                "band_id": 1,
+                "name": "GussetPunch",
+                "genre": "buttRock",
+                "available_start_time": "02:00:00",
+                "end_time": "11:00:00"
+            }
+        }
+    ],
+    "set_times": [
+        {
+            "set_time_id": 1,
+            "event_id": 1,
+            "stage_id": 1,
+            "start_time": "03:00:00",
+            "band_id": 1,
+            "band": {
+                "band_id": 1,
+                "name": "GussetPunch",
+                "genre": "buttRock",
+                "available_start_time": "02:00:00",
+                "end_time": "11:00:00"
+            },
+            "stage": {
+                "stage_id": 1,
+                "stage_name": "apple",
+                "stage_type": "main"
+            }
+        }
+    ],
+    "stages": [
+        {
+            "stage_id": 1,
+            "stage_name": "apple",
+            "stage_type": "main"
+        }
+    ]
 }

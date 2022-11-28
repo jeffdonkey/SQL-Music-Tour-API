@@ -1,7 +1,8 @@
 // DEPENDENCIES
 const events = require('express').Router()
 const db = require('../models')
-const { Event } = db 
+const { Band, Meet_greet, Event, Set_time, Stage, Stage_event } = db
+const { Op } = require('sequelize')
 
 //FIND ALL EVENTS- index route
 events.get('/', async (req, res) => {
@@ -14,10 +15,28 @@ events.get('/', async (req, res) => {
 })
 
 //FIND SPECIFIC EVENT- show route
-events.get('/:id', async (req,res) => {
+events.get('/:name', async (req, res) => {
     try {
-        const foundEvent = await Event.findOne ({
-            where: { event_id: req.params.id }
+        const foundEvent = await Event.findOne({
+            where: { name: req.params.name },
+            include: [{
+                model: Meet_greet,
+                as: "meet_greets",
+                include: { model: Band, as: "band" }
+            },
+            {
+                model: Set_time,
+                as: "set_times",
+                include: [{ model: Band, as: "band" },
+                { model: Stage, as: "stage" }]
+            },
+            {
+                model: Stage,
+                as: "stages",
+                through: { attributes: []}
+            }
+                
+            ]
         })
         res.status(200).json(foundEvent)
     } catch (error) {
@@ -33,7 +52,7 @@ events.post('/', async (req, res) => {
             message: 'Successfully inserted a new event',
             data: newEvent
         })
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err)
     }
 })
@@ -49,7 +68,7 @@ events.put('/:id', async (req, res) => {
         res.status(200).json({
             message: `Successfully updated ${updatedEvents} event(s)`
         })
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err)
     }
 })
@@ -65,7 +84,7 @@ events.delete('/:id', async (req, res) => {
         res.status(200).json({
             message: `Successfully deleted ${deletedEvents} event(s)`
         })
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err)
     }
 })
